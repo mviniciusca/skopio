@@ -1,0 +1,42 @@
+{% extends "books/base.html.twig" %} 
+{% set count = 0 %}
+{% for book in books %}
+ {% set count = count + 1 %}
+{% endfor %}
+{% block content %} 
+
+{% if count > 0 %}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Year</th>
+      <th scope="col">Title</th>
+      <th scope="col">Author</th>
+      <th scope="col">Genre</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody> 
+    {% for book in books %}
+        <tr>   
+            <td>{{ book.year }}</td>
+            <td>{{ book.title }}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ book.genre }}</td>   
+            <td>
+                <form action="/books/show/{{book.id}}" method="post">
+                    <button class="btn btn-primary btn-sm">Details</button>
+                    <input type="hidden" value="{{book.id}}" name="id">
+                </form>
+                <p></p>
+                <form action="/books/delete/{{book.id}}" method="post">
+                    <button class="btn btn-danger btn-sm">Delete</button>
+                    <input type="hidden" value="{{book.id}}" name="id">
+                </form>
+            </td>   
+        </tr> 
+    {% endfor %}
+  </tbody>
+</table>
+{% endif %}
+{% endblock %}

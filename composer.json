@@ -1,0 +1,21 @@
+{
+    "name": "marcoscoelho/agenda",
+    "description": "agenda de clientes com data de ingresso e expiração do website",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Src\\": "src/",
+            "App\\": "app/"
+        }
+    },
+    "authors": [{
+        "name": "Marcos Coelho",
+        "email": "mviniciusca@gmail.com"
+    }],
+    "require": {
+        "slim/slim": "^4.10",
+        "slim/psr7": "^1.5",
+        "twig/twig": "^3.0",
+        "slim/flash": "^0.4.0"
+    }
+}
