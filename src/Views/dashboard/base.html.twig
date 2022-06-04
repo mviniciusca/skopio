@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/skopio.css">
     <link rel="stylesheet" href="/assets/css/ui-components.css">
+    <script src="//unpkg.com/alpinejs" defer></script>
     <title>Dashboard</title>
 </head>
 
@@ -17,15 +18,115 @@
                 <div class="logo">Logo</div>
                 <div class="menu">
                     <ul>
-                        <li>Home</li>
-                        <li>User</li>
+                        <li>
+                            <ion-icon name="speedometer-outline"></ion-icon>
+                        </li>
+                        <li>
+                            <ion-icon name="add-outline"></ion-icon>
+                        </li>
+                        <li>
+                            <ion-icon name="mail-outline"></ion-icon>
+                        </li>
+                        <li>
+                            <ion-icon name="person-outline"></ion-icon>
+                        </li>
+                        <li>
+                            <ion-icon name="calendar-outline"></ion-icon>
+                        </li>
+                        <li>
+                            <ion-icon name="settings-outline"></ion-icon>
+                        </li>
+                        <li>
+                            <ion-icon name="search-outline"></ion-icon>
+                        </li>
                     </ul>
                 </div>
                 <div class="user">User</div>
             </div>
         </nav>
         <main class="main">
-            <div class="content main-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem, qui. Iusto, nihil atque quod omnis, eius architecto quaerat delectus doloremque ut odit ipsum unde magni rerum nostrum aut consequuntur eligendi.</div>
+            <div class="content main-content">
+                <div class="divider">
+                    <ion-icon name="rocket-outline"></ion-icon> skopio / home
+                </div>
+                <div class="row tp-1">
+                    <div class="card" id="card-">
+                        <div class="card-title"><span><ion-icon name="checkmark-done-outline"></ion-icon></span>Tasks</div>
+                        <div class="card-body"></div>
+                        <div class="card-footer">
+                            <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="card" id="card-clients">
+                        <div class="card-title"><span><ion-icon name="person-outline"></ion-icon></span>Clients</div>
+                        <div class="card-body"></div>
+                        <!--alpine-->
+                        <span id="alpine-one" x-data="{ open: false, toggle() { this.open = ! this.open } }">
+                            <div id="menu-clients" x-show="open">
+                                <ul>
+                                    <li>add new client</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer">
+                                <ion-icon @click="toggle()" name="ellipsis-horizontal-outline"></ion-icon>
+                            </div>
+                        </span>
+                        <!-- alpine -->
+                    </div>
+                    <div class="card" id="card-">
+                        <div class="card-title"><span><ion-icon name="server-outline"></ion-icon></span>S/S&S</div>
+                        <div class="card-body"></div>
+                        <div class="card-footer">
+                            <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="card" id="card-">
+                        <div class="card-title"><span><ion-icon name="mail-outline"></ion-icon></span>Mail</div>
+                        <div class="card-body">
+                            <div class="mail-box">
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="card" id="card-">
+                        <div class="card-title"><span><ion-icon name="card-outline"></ion-icon></span>Payments</div>
+                        <div class="card-body"></div>
+                        <div class="card-footer">
+                            <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+                <div class="divider">
+                    <ion-icon name="bulb-outline"></ion-icon> routine</div>
+                <div class="row tp-2">
+                    <div class="card" id="card-agenda">
+                        <div class="card-title"><span><ion-icon name="today-outline"></ion-icon></span>Agenda</div>
+                        <div class="card-body"></div>
+                        <div class="card-footer"></div>
+                    </div>
+                    <div class="card" id="card-">
+                        <div class="card-title"><span><ion-icon name="receipt-outline"></ion-icon></span>Relatories</div>
+                        <div class="card-body"></div>
+                        <div class="card-footer"></div>
+                    </div>
+                </div>
+                <div class="divider">
+                    <ion-icon name="layers-outline"></ion-icon>settings & security</div>
+                <div class="row tp-1">
+                    <div class="card" id="card-">
+                        <div class="card-title"><span><ion-icon name="people-outline"></ion-icon></span>Users</div>
+                        <div class="card-body"></div>
+                        <div class="card-footer"></div>
+                    </div>
+                    <div class="card" id="card-">
+                        <div class="card-title"><span><ion-icon name="settings-outline"></ion-icon></span>Settings</div>
+                        <div class="card-body"></div>
+                        <div class="card-footer"></div>
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
