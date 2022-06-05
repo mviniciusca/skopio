@@ -10,8 +10,12 @@ class HomepageController extends Controller
 {
     public function index(Request $request, Response $response, $args)
     {
-        $response->getBody()->write($this->twig->view('dashboard/base.html.twig', []));
-        return $response;
+        if (isset($_SESSION['user'])) {
+            $response->getBody()->write($this->twig->view('dashboard/base.html.twig', []));
+            return $response;
+        } else {
+            return $response->withHeader('Location', '/login')->withStatus(302);
+        }
     }
 
     public function show(Request $request, Response $response, $args)

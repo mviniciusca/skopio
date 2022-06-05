@@ -15,7 +15,7 @@ class Settings
            'DB'    => [
                        'DB_HOST' =>  '172.21.0.3',
                        'DB_PSWD' =>  'example',
-                       'DB_NAME' =>  'jobboard',
+                       'DB_NAME' =>  'skopio',
                        'DB_USER' =>  'root',
                        'DB_PORT' =>  '3306',
                        'DB_DRIV' =>  'mysql',

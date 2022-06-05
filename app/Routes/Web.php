@@ -1,24 +1,21 @@
 <?php
 
+/** Routes */
+
 use Slim\Routing\RouteCollectorProxy;
+use Src\Middlewares\LoginMiddleware;
 
-$app->get('/', ['\Src\Controllers\BooksController', 'index']);
-
-/** Dashboard Routes */
-$app->group('/dashboard', function (RouteCollectorProxy $group) {
+/** Home */
+$app->group('/', function (RouteCollectorProxy $group) {
     $group->get('', ['\Src\Controllers\Dashboard\HomepageController', 'index']);
 });
-
 
 /** User Routes */
 
 $app->get('/user', ['\Src\Controllers\UserController', 'index']);
 
+/** Login Route */
 
-/** Book Routes */
-$app->group('/books', function (RouteCollectorProxy $group) {
-    $group->any('/new', ['\Src\Controllers\BooksController', 'store']);
-    $group->any('/show/{id}', ['\Src\Controllers\BooksController', 'show']);
-    $group->post('/delete/{id}', ['\Src\Controllers\BooksController', 'delete']);
-    $group->post('/update/{id}', ['\Src\Controllers\BooksController', 'update']);
-});
+$app->get('/login', ['\Src\Controllers\Login\LoginController', 'index']);
+$app->post('/login', ['\Src\Controllers\Login\LoginController', 'login']);
+$app->any('/logout', ['\Src\Controllers\Login\LoginController', 'logout']);

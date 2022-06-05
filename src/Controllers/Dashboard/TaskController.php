@@ -1,9 +1,10 @@
 <?php
 
-namespace Src\Controllers;
+namespace Src\Controllers\Dashboard;
 
 use Slim\Psr7\Response;
 use Slim\Psr7\Request;
+use Src\Controllers\Controller;
 
 class TaskController extends Controller
 {

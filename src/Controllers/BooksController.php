@@ -79,7 +79,6 @@ class BooksController extends Controller
     public function update(Request $request, Response $response, $args)
     {
         $update = new BooksModel();
-        $validade = new Validator();
         $data = [
             'id'     => $request->getParsedBody()['id'],
             'author' => $request->getParsedBody()['author'],
