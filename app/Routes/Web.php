@@ -3,13 +3,15 @@
 /** Routes */
 
 use Slim\Routing\RouteCollectorProxy;
-use Src\Middlewares\LoginMiddleware;
 
 /** Home */
 $app->group('/', function (RouteCollectorProxy $group) {
     $group->get('', ['\Src\Controllers\Dashboard\HomepageController', 'index']);
 });
 
+/** Inbox */
+
+$app->get('/inbox', ['\Src\Controllers\Dashboard\InboxController', 'index']);
 /** User Routes */
 
 $app->get('/user', ['\Src\Controllers\UserController', 'index']);

@@ -1,6 +1,8 @@
 <?php
 
-namespace Src\Models;
+namespace Src\Models\Dashboard;
+
+use Src\Models\Model;
 
 class TaskModel extends Model
 {
