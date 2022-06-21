@@ -14,7 +14,9 @@ $app->group('/', function (RouteCollectorProxy $group) {
 $app->get('/inbox', ['\Src\Controllers\Dashboard\InboxController', 'index']);
 /** User Routes */
 
-$app->get('/user', ['\Src\Controllers\UserController', 'index']);
+$app->get('/user', ['\Src\Controllers\Dashboard\UserController', 'index']);
+$app->post('/user/create', ['\Src\Controllers\Dashboard\UserController', 'store']);
+$app->any('/user/edit/{id}', ['\Src\Controllers\Dashboard\UserController', 'show']);
 
 /** Login Route */
 

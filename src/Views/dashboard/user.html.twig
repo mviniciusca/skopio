@@ -1,0 +1,56 @@
+{% extends 'dashboard/base.html.twig' %} {% block content %}
+<div class="divider">
+    <ion-icon name="person-outline"></ion-icon> skopio / users</div>
+<div class="pages tp-4">
+    <div class="cards">
+        <div class="page-title">
+            <ion-icon name="person-add-outline"></ion-icon>create a new user </div>
+        <p></p>
+        <form class="form-group" action="/user/create" method="post">
+            <input type="text" name="username" placeholder="username">
+            <input type="email" name="email" placeholder="e-mail">
+            <input type="password" name="passcode" placeholder="password">
+            <button type="submit">save <ion-icon name="chevron-forward-outline"></ion-icon></button>
+        </form>
+    </div>
+    <div class="cards">
+        <div class="page-title">
+            <ion-icon name="flashlight-outline"></ion-icon>manager{% if user %} {{user.username}} {% endif %}
+        </div>
+        <p></p>
+        {% if users %} {% for user in users %}
+        <ul class="users-list">
+            <li class="avatar"></li>
+            <li><span class="badge">{{user.level}}</span>
+                <p></p>{{user.username}}<br>{{user.email}}
+                <form class="form-group" method="post" action="/user/edit/{{user.id}}">
+                    <button class="slim-btn" type="submit">edit<ion-icon name="chevron-forward-outline"></ion-icon></button>
+                    <input type="hidden" name="id" value="{{user.user_id}}">
+                </form>
+            </li>
+        </ul>
+        {% endfor %} {%endif %}
+        <!-- edit -->
+        {% if user %}
+        <form class="form-group" action="/user/create" method="post">
+
+            <input type="text" name="username" placeholder="username" value="{{user.username}}">
+            <input type="email" name="email" placeholder="e-mail" value="{{user.email}}">
+            <input type="password" name="passcode" placeholder="password" value="{{user.password}}">
+            <input type="hidden" name="id" value="{{user.user_id}}">
+            <button type="submit">save
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+            </button>
+            <a href="/users">
+                <button>back
+                <ion-icon name="chevron-back-outline"></ion-icon>
+            </button>
+            </a>
+        </form>
+        {% endif %}
+    </div>
+    <div class="cards">
+
+    </div>
+</div>
+{% endblock %}

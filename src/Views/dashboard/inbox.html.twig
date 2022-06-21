@@ -1,10 +1,10 @@
 {% extends 'dashboard/base.html.twig' %} {% block content %}
 <div class="divider">
-    <ion-icon name="mail-outline"></ion-icon> skopiomail</div>
+    <ion-icon name="mail-outline"></ion-icon> skopiomail / 1 unread message</div>
 <div class="inbox-wrapper">
     <div class="inbox-sidebar">
         <li>
-            <ion-icon name="open-outline"></ion-icon> compose</li>
+            <ion-icon name="pencil"></ion-icon> compose</li>
         <li>
             <ion-icon name="folder-open-outline"></ion-icon> draft </li>
         <li>
@@ -19,7 +19,29 @@
         <li>
             <ion-icon name="settings-outline"></ion-icon> settings</li>
     </div>
-    <div class="inbox-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, beatae! Ad molestias aut minima, aliquid maiores deserunt veritatis saepe enim eius consequuntur impedit quisquam laudantium, unde quas nulla totam cumque?</div>
+    <div class="inbox-content">
+        <div class="inbox-main-content">
+            <div class="inbox-mail-wrapper">
+                <div class="check"><input type="checkbox"></div>
+                <div class="icon">
+                    <ion-icon name="mail-open-outline"></ion-icon>
+                </div>
+                <div class="mail-title"><strong>read title mail</strong></div>
+                <div class="mail-sendfrom">
+                    some@emai.com</div>
+                <div class="datetime">10:24</div>
+            </div>
+            <div class="inbox-mail-wrapper mail-unread">
+                <div class="check"><input type="checkbox"></div>
+                <div class="icon">
+                    <ion-icon name="mail-unread-outline"></ion-icon>
+                </div>
+                <div class="mail-title"><strong>unread title mail</strong></div>
+                <div class="mail-sendfrom">some@emai.com</div>
+                <div class="datetime">10:44</div>
+            </div>
+        </div>
+    </div>
 
 </div>
 {% endblock %}
