@@ -12,6 +12,10 @@ $app->group('/', function (RouteCollectorProxy $group) {
 /** Inbox */
 
 $app->get('/inbox', ['\Src\Controllers\Dashboard\InboxController', 'index']);
+
+/** Tasks */
+$app->get('/tasks', ['\Src\Controllers\Dashboard\TaskController', 'index']);
+
 /** User Routes */
 
 $app->get('/user', ['\Src\Controllers\Dashboard\UserController', 'index']);

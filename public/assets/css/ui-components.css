@@ -5,7 +5,8 @@
         font-weight: normal;
     }
     
-    .form-group {
+    .form-group,
+    {
         margin-bottom: 15px;
     }
     
@@ -28,6 +29,7 @@
     }
     
     .form-group button,
+    button,
     .slim-btn {
         outline: none;
         border: none;
@@ -43,7 +45,8 @@
         width: auto !important;
     }
     
-    .form-group button ion-icon {
+    .form-group button ion-icon,
+    button ion-icon {
         padding: 0;
         margin: 0
     }
@@ -102,3 +105,4 @@
         padding: 5px;
         font-size: .7rem;
     }
+    /** Tables **/

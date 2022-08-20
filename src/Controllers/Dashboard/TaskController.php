@@ -10,12 +10,14 @@ class TaskController extends Controller
 {
     public function index(Request $request, Response $response, $args)
     {
-        $response->getBody()->write($this->twig->view('', []));
+        $response->getBody()->write($this->twig->view('dashboard/tasks.html.twig', []));
         return $response;
     }
 
     public function show(Request $request, Response $response, $args)
     {
+        $response->getBody()->write($this->twig->view('', []));
+        return $response;
     }
 
     public function create(Request $request, Response $response, $args)

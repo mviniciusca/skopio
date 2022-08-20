@@ -83,7 +83,7 @@ a:visited {
 /** Templates **/
 
 .divider {
-    margin-top: 60px;
+    margin-top: 40px;
     margin-bottom: 60px;
     display: flex;
     align-items: center;
@@ -236,7 +236,7 @@ body {
     display: flex;
     justify-items: center;
     align-items: center;
-    background-color: #1a192f;
+    background-color: #ffffff;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -267,11 +267,13 @@ body {
     gap: 15px
 }
 
-.form-group button ion-icon {
+.form-group button ion-icon,
+button ion-icon {
     font-size: 24px;
 }
 
-.form-group button {
+.form-group button,
+button {
     background-color: #5955ff;
     color: white;
     display: flex;
@@ -374,11 +376,10 @@ body {
 /** Dashboard Pages : User **/
 
 .users-list {
-    margin-bottom: 60px;
+    margin-bottom: 5px;
     display: flex;
     gap: 40px;
     align-items: center;
-    box-shadow: 0px 24px 7px -24px rgb(92, 46, 255);
     padding-bottom: 15px;
 }
 
@@ -390,4 +391,12 @@ body {
 
 .users-list ion-icon:hover {
     opacity: .5;
+}
+
+.cards ul {
+    display: grid;
+    grid-template-columns: 160px 1fr 40px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    gap: 7px
 }
